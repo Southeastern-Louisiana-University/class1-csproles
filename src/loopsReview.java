@@ -18,9 +18,12 @@ public class loopsReview {
             if(grade > 110){
                 System.out.println("Invalid number, try again");
             }
+            else{
+                count++;
+                sum += grade;
+            }
 
-            count++;
-            sum += grade;
         }
+        System.out.println("The average of all the grades is " + (sum/count));
     }
 }
