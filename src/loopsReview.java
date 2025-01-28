@@ -1,5 +1,11 @@
 package src;
 
 public class loopsReview {
-    //this is changed again
+    public static void main (String[] args){
+        double grade = 0;
+
+//        while(grade >= 0){
+//
+//        }
+    }
 }
