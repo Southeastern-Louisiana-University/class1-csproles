@@ -19,11 +19,38 @@ public class loopsReview {
                 System.out.println("Invalid number, try again");
             }
             else{
-                count++;
-                sum += grade;
+                if(grade > -1) {
+                    count++;
+                    sum += grade;
+                }
             }
 
         }
-        System.out.println("The average of all the grades is " + (sum/count));
+//        System.out.println("The average of all the grades is " + (sum/count));
+        getLetterGrade(grade);
+    }
+
+    public static void getLetterGrade(double avg){
+        String letterGrade = "";
+        if(avg > 100){
+        letterGrade = "A+";
+        }
+        else if((avg <= 100) && (avg >= 90)){
+            letterGrade = "A";
+        }
+        else if((avg < 90) && (avg >= 80)){
+            letterGrade = "B";
+        }
+        else if((avg < 80) && (avg >= 70)){
+            letterGrade = "C";
+        }
+        else if((avg < 70) && (avg >= 60)){
+            letterGrade = "D";
+        }
+        else if(avg < 60){
+            letterGrade = "F";
+        }
+
+        System.out.println("The average grade is " + avg + ". This equates to the letter grade '" + letterGrade + "'");
     }
 }
