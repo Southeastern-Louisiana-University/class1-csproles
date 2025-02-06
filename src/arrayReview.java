@@ -9,17 +9,23 @@ public class arrayReview {
         System.out.println("Before ");
         printArray(doubleArray);
 
-        for(int i = 0; i < doubleArray.length; i++){
-            doubleArray[i] = i;
-        }
+        editArray(doubleArray);
 
         System.out.println("\nAfter");
         printArray(doubleArray);
+
+        System.out.println("\nThe sum of all the elements in the array is " + sumArray(doubleArray));
     }
 
     public static void printArray(double[] arr){
         for(int i = 0; i < arr.length; i++){
             System.out.println("Value of anyArray[" + i + "] is: " + arr[i]);
+        }
+    }
+
+    public static void editArray(double[] arr){
+        for(int i = 0; i < arr.length; i++){
+            arr[i] = i;
         }
     }
 
