@@ -11,6 +11,8 @@ public class Car {
     private int numOfWrecks;
     private String plateNumber;
 
+    private boolean advanced;
+
 
     //Constructors
     /**
@@ -27,6 +29,7 @@ public class Car {
         this.model = model;
         this.year = year;
         this.mileage = mileage;
+        advanced = false;
     }
     /**
      Constructor of the Car class
@@ -49,6 +52,7 @@ public class Car {
         this.hasInsurance = hasInsurance;
         this.numOfWrecks = numOfWrecks;
         this.plateNumber = plateNumber;
+        advanced = true;
     }
 
     //Methods (behavior - how we modify and access data fields)
@@ -80,15 +84,43 @@ public class Car {
         return this.plateNumber;
     }
 
+    private boolean getAdvanced(){
+        return advanced;
+    }
+
     //Increases mileage (this impacts the data field)
     public void drive (int mileage) {
         this.mileage += mileage;
     }
 
+    public String toString(Car carName){
+        if(carName.getAdvanced()) {
+            return "Car's information:"
+                    + "\nMake: " + carName.getMake()
+                    + "\nModel: " + carName.getModel()
+                    + "\nYear: " + carName.getYear()
+                    + "\nMileage: " + carName.getMileage()
+                    + "\nHas Insurance: " + carName.getInsuranceStatus()
+                    + "\nNumber of Reported Wrecks: " + carName.getNumOfWrecks()
+                    + "\nPlate Number: " + getPlateNumber();
+        }
+        return "Car's information:"
+                + "\nMake: " + carName.getMake()
+                + "\nModel: " + carName.getModel()
+                + "\nYear: " + carName.getYear()
+                + "\nMileage: " + carName.getMileage();
+    }
+
     public static void main(String[] args){
+        Car car1 = new Car("Ford", "Focus", 2018, 0);
         Car carCallie = new Car("Nissan", "Altima", 2012, 75000);
         Car carCallieS = new Car("Nissan", "Altima", 2012, 75000,
                 true, 0, "ABC123");
-        System.out.println("This is it: " + carCallie.toString());
+
+        System.out.println(car1.toString(car1));
+        System.out.println();
+        System.out.println(carCallie.toString(carCallie));
+        System.out.println();
+        System.out.println(carCallieS.toString(carCallieS));
     }
 }
